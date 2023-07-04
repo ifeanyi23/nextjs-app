@@ -36,15 +36,15 @@ jobs:
             
       - name: Install dependencies
         working-directory: ./
-        run: npm install
+        run: npm install -g yarn
 
-    #   - name: Install dependencies
-    #     working-directory: ./
-    #     run: npm build
+      - name: Install yarn
+        working-directory: ./
+        run: yarn install --frozen-lockfile 
   
       - name: Build Next.js app
         working-directory: ./
-        run: npm run build
+        run: yarn build
 
       - name: Upload static files to S3
         run: |
