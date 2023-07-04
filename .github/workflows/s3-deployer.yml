@@ -35,11 +35,13 @@ jobs:
           node-version: '14'
             
       - name: Install dependencies
+        working-directory: ./
         run: npm ci
   
       - name: Build Next.js app
+        working-directory: ./
         run: npm run build
-        
+
       - name: Upload static files to S3
         run: |
           aws s3 sync ./out s3://${{ env.S3_BUCKET }}/Scripts
