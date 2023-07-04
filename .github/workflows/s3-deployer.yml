@@ -34,9 +34,9 @@ jobs:
         with:
           node-version: '14'
             
-      - name: Install dependencies
-        working-directory: ./
-        run: npm ci
+    #   - name: Install dependencies
+    #     working-directory: ./
+    #     run: npm ci
   
       - name: Build Next.js app
         working-directory: ./
